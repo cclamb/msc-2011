@@ -7,50 +7,61 @@ Database file #2: bib/drm.bib
 Database file #3: bib/ctrl.bib
 Warning--string name "april" is undefined
 --line 24 of file bib/ctrl.bib
+Warning--string name "december" is undefined
+--line 36 of file bib/ctrl.bib
+Warning--string name "december" is undefined
+--line 48 of file bib/ctrl.bib
+Warning--string name "december" is undefined
+--line 60 of file bib/ctrl.bib
+Warning--string name "december" is undefined
+--line 72 of file bib/ctrl.bib
+Warning--string name "december" is undefined
+--line 84 of file bib/ctrl.bib
+Warning--I didn't find a database entry for "BuYeVeBrBr:09"
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 1 entry,
+You've used 17 entries,
             4039 wiz_defined-function locations,
-            820 strings with 7545 characters,
-and the built_in function-call counts, 1167 in all, are:
-= -- 74
-> -- 37
-< -- 9
-+ -- 20
-- -- 7
-* -- 69
-:= -- 162
-add.period$ -- 2
-call.type$ -- 1
-change.case$ -- 1
-chr.to.int$ -- 24
-cite$ -- 1
-duplicate$ -- 72
-empty$ -- 92
-format.name$ -- 8
-if$ -- 259
+            929 strings with 10673 characters,
+and the built_in function-call counts, 14818 in all, are:
+= -- 1186
+> -- 351
+< -- 136
++ -- 194
+- -- 58
+* -- 739
+:= -- 2149
+add.period$ -- 35
+call.type$ -- 17
+change.case$ -- 17
+chr.to.int$ -- 312
+cite$ -- 17
+duplicate$ -- 1057
+empty$ -- 1195
+format.name$ -- 73
+if$ -- 3459
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 14
-newline$ -- 26
-num.names$ -- 1
-pop$ -- 38
+int.to.str$ -- 17
+missing$ -- 182
+newline$ -- 78
+num.names$ -- 17
+pop$ -- 402
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 83
+skip$ -- 1134
 stack$ -- 0
-substring$ -- 58
-swap$ -- 61
-text.length$ -- 1
+substring$ -- 751
+swap$ -- 902
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 1
+type$ -- 17
 warning$ -- 0
-while$ -- 4
-width$ -- 2
-write$ -- 31
-(There was 1 warning)
+while$ -- 67
+width$ -- 19
+write$ -- 197
+(There were 7 warnings)
