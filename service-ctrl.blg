@@ -18,13 +18,13 @@ Warning--string name "december" is undefined
 Warning--string name "december" is undefined
 --line 84 of file bib/ctrl.bib
 Warning--I didn't find a database entry for "BuYeVeBrBr:09"
-Warning--I didn't find a database entry for "amazon-sla"
-Warning--I didn't find a database entry for "rackspace-sla"
-Warning--I didn't find a database entry for "google-arch"
-Warning--I didn't find a database entry for "amazon-best-practice"
-Warning--I didn't find a database entry for "amazon-fault-tolerant"
-Warning--I didn't find a database entry for "amazon-cloud-watch"
-Warning--I didn't find a database entry for "amazon-auto-scale"
+Warning--I didn't find a database entry for "ctrl:amazon-sla"
+Warning--I didn't find a database entry for "ctrl:rackspace-sla"
+Warning--I didn't find a database entry for "ctrl:google-arch"
+Warning--I didn't find a database entry for "ctrl:amazon-best-practice"
+Warning--I didn't find a database entry for "ctrl:amazon-fault-tolerant"
+Warning--I didn't find a database entry for "ctrl:amazon-cloud-watch"
+Warning--I didn't find a database entry for "ctrl:amazon-auto-scale"
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -32,7 +32,7 @@ Warning--I didn't find a database entry for "amazon-auto-scale"
 Done.
 You've used 17 entries,
             4039 wiz_defined-function locations,
-            936 strings with 10783 characters,
+            936 strings with 10818 characters,
 and the built_in function-call counts, 14818 in all, are:
 = -- 1186
 > -- 351
