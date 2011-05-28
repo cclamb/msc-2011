@@ -6,71 +6,62 @@ Database file #1: bib/emr.bib
 Database file #2: bib/drm.bib
 Database file #3: bib/ctrl.bib
 Warning--string name "april" is undefined
---line 24 of file bib/ctrl.bib
+--line 95 of file bib/ctrl.bib
 Warning--string name "december" is undefined
---line 36 of file bib/ctrl.bib
+--line 107 of file bib/ctrl.bib
 Warning--string name "december" is undefined
---line 48 of file bib/ctrl.bib
+--line 119 of file bib/ctrl.bib
 Warning--string name "december" is undefined
---line 60 of file bib/ctrl.bib
+--line 131 of file bib/ctrl.bib
 Warning--string name "december" is undefined
---line 72 of file bib/ctrl.bib
+--line 143 of file bib/ctrl.bib
 Warning--string name "december" is undefined
---line 84 of file bib/ctrl.bib
-Warning--I didn't find a database entry for "ctrl:amazon-cloud-watch"
-Warning--I didn't find a database entry for "BuYeVeBrBr:09"
-Warning--I didn't find a database entry for "ctrl:amazon-sla"
-Warning--I didn't find a database entry for "ctrl:rackspace-sla"
-Warning--I didn't find a database entry for "ctrl:google-arch"
-Warning--I didn't find a database entry for "ctrl:amazon-best-practice"
-Warning--I didn't find a database entry for "ctrl:amazon-fault-tolerant"
-Warning--I didn't find a database entry for "ctrl:amazon-auto-scale"
-Warning--I didn't find a database entry for "comptheory:sipser:intro-comp-theory"
-Warning--I didn't find a database entry for "comptheory:papadimitriou:computational-complexity"
+--line 155 of file bib/ctrl.bib
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty booktitle in ctrl:google-arch
 
 Done.
-You've used 8 entries,
+You've used 18 entries,
             4039 wiz_defined-function locations,
-            875 strings with 9394 characters,
-and the built_in function-call counts, 7859 in all, are:
-= -- 636
-> -- 208
-< -- 76
-+ -- 113
-- -- 36
-* -- 404
-:= -- 1146
-add.period$ -- 17
-call.type$ -- 8
-change.case$ -- 8
-chr.to.int$ -- 171
-cite$ -- 8
-duplicate$ -- 540
-empty$ -- 577
-format.name$ -- 43
-if$ -- 1821
+            907 strings with 10436 characters,
+and the built_in function-call counts, 11971 in all, are:
+= -- 935
+> -- 272
+< -- 89
++ -- 147
+- -- 48
+* -- 562
+:= -- 1811
+add.period$ -- 38
+call.type$ -- 18
+change.case$ -- 17
+chr.to.int$ -- 201
+cite$ -- 19
+duplicate$ -- 897
+empty$ -- 1018
+format.name$ -- 57
+if$ -- 2752
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 93
-newline$ -- 51
-num.names$ -- 8
-pop$ -- 191
+int.to.str$ -- 18
+missing$ -- 162
+newline$ -- 85
+num.names$ -- 14
+pop$ -- 395
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 604
+skip$ -- 926
 stack$ -- 0
-substring$ -- 414
-swap$ -- 488
-text.length$ -- 19
+substring$ -- 478
+swap$ -- 707
+text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 8
-warning$ -- 0
-while$ -- 34
-width$ -- 9
-write$ -- 112
-(There were 16 warnings)
+type$ -- 18
+warning$ -- 1
+while$ -- 44
+width$ -- 20
+write$ -- 192
+(There were 7 warnings)

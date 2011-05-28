@@ -48,6 +48,15 @@ number = "9",
 pages = "1371-1374",
 year = {2004})
 
+@misc(AWS,
+title = {Amazon {W}eb {S}ervices: {O}verview of {S}ecurity {P}rocesses},
+organization = {Amazon},
+url = {http://s3.amazonaws.com/aws\_blog/AWS\_Security\_Whitepaper\_2008\_09.pdf},
+month = {Sep.},
+year = {2008})
+
+
+
 @article{ArGi:07,
     address = {Amsterdam, The Netherlands, The Netherlands},
     author = {Donovan Artz and Yolanda Gil},
@@ -162,7 +171,7 @@ note = {{\small \verb%http://www.jura.uni-tuebingen.de/bechtold/pub/2003/Future_
  pages = {97-108},
  year = {1999})
  
-  @techreport(BL:73,
+  @techreport(BlPa:73,
 author = {D. Elliott Bell and Leonard J. La Padula}, 
 title = {Secure Computer Systems: Mathematical Foundations, {MTR-2547, Vol. I}}, 
 institution = {The MITRE Corporation}, 
@@ -170,7 +179,7 @@ address = {Bedford, MA},
 year = {March 1, 1973},
 note = {ESD-TR-73-278-I})
 
-@techreport(BL:76,
+@techreport(BlPa:76,
 author = {D. Elliott Bell and Leonard J. La Padula}, 
 title = {Secure Computer System: Unified Exposition and Multics Interpretation, {MTR-2997, Rev. 1}}, 
 institution = {The MITRE Corporation}, 
@@ -256,6 +265,16 @@ note = {ESD-TR-75-306})
  title = {Pattern Oriented Software Architecture--{A} System of Patterns},
  publisher = {John Wiley \& Sons},
  year = {1996})
+ 
+ 
+  @article(BuYeVeBrBr:09,
+author = "Rajkumar Buyya and Chee Shin Yeo and Srikumar Venugopal and James Broberg and Ivona Brandic",
+title = "Cloud computing and emerging {IT} platforms: {V}ision, hype, and reality for delivering computing as the 5th utility",
+journal = "Future Generation Computer Systems",
+volume = "25",
+number = "6",
+pages = "599-616",
+year = {2009})
 
 @techreport(CaJuPoLe:02,
  author = "Amy Carroll and Mario Juarez and Julia Polk and Tony Leininger",
@@ -338,7 +357,7 @@ title = {Coral Consortium Whitepaper},
 key = {coral},
 month = {Feb.},
 year = {2006},
-note = {{\small \verb%www.coral-interop.org/main/news/Coral.whitepaper.pdf%}})
+url = {www.coral-interop.org/main/news/Coral.whitepaper.pdf})
 
  
 
@@ -523,24 +542,7 @@ year = {2004})
  pages = {54-62},
  month = {Oct.},
  year = {2007})
-
-@inproceedings{JamHeLamb:10,
- author = {Jamkhedkar, Pramod A. and Heileman, Gregory L. and Lamb, Chris C.},
- title = {An interoperable usage management framework},
- booktitle = {Proceedings of the tenth annual ACM workshop on Digital rights management},
- series = {DRM '10},
- year = {2010},
- isbn = {978-1-4503-0091-9},
- location = {Chicago, Illinois, USA},
- pages = {73--88},
- numpages = {16},
- url = {http://doi.acm.org/10.1145/1866870.1866885},
- doi = {http://doi.acm.org/10.1145/1866870.1866885},
- acmid = {1866885},
- publisher = {ACM},
- address = {New York, NY, USA},
- keywords = {access control, drm, formal methods, interoperability},
-} 
+ 
  
   @conference(HeJeJaKh:07,
  author = {Gregory L. Heileman and Henry Jerez and Pramod A. Jamkhedkar and Joud Khoury},
@@ -549,7 +551,6 @@ year = {2004})
 of Business Models for Virtual Goods},
  address = {Koblenz, Germany},
  month = {Oct.},
-
  year = {2007})
  
  @inproceedings (HoKaSc:04,
@@ -570,11 +571,22 @@ institution = {Elisar Software Corporation},
 month = {Apr.},
 year = {2001})
 
+@article{He:09,
+ author = {Joseph L. Hellersetin and Sharad Singhal and Qian Wang},
+ title = {Research Challenges in Control Engineering of Computing Systems},
+ journal = {IEEE Transactions on Network and Management},
+ volume = {6},
+ number = {4},
+ year = {2009},
+ pages = {206-211},
+ }
+
 @conference (HoPiSa:01,
 author = {B. Horne and B. Pinkas and T. Sander},
 title = {Escrow Services and incentives in Peer-to-Peer  Networks},
 booktitle = {Proceedings of the 3rd ACM Conference on Electronic Commerce},
 year = {2001})
+
 
 @techreport(HiPrScWa:06,
  author = {Manuel Hilty and Alexander Pretschner and Christian Schaefer and Thomas Walter},
@@ -591,6 +603,13 @@ year = {2001})
  pages = {531--546},
  month = {Sept.},
  year = {2007})
+ 
+  @misc(HPCloud1,
+ title = {Private cloud: management of pre-requisites}, 
+ month = {August},
+ year = {2010},
+ howpublished = {HP Business white paper},
+ note = {http://h20195.www2.hp.com/V2/GetPDF.aspx/4AA3-0648ENW.pdf})
  
   @techreport(HuFeKu:06,
  author = {Vincent Hu and  David Ferraiolo and Rick Kuhn},
@@ -667,7 +686,7 @@ of Business Models for Virtual Goods},
  howpublished = {$<$indecs$>$rdd},
  month = {May.},
  year = {2002},
- note = {http://xml.coverpages.org/IndecsWhitePaper200205.pdf}
+ note = {{\small \verb%xml.coverpages.org/IndecsWhitePaper200205.pdf%}}
 )
 
 @misc(ITReform,
@@ -687,11 +706,21 @@ note = {{\small \verb%http://www.gartner.com/it/page.jsp?id=1389313%}})
  address = {Annapolis, MD},
  year = {1994},
  note = {{\small \verb%www.cni.org/docs/ima.ip-workshop/www/Kahn.html%}})
+ 
+@article(An:09,
+author = {Martin A. Kj{\ae}r and Maria Kihl and Anders Robertsson},
+title = "Resource Allocation and Disturbance Rejection in
+Web Servers using SLAs and VirtualizedThe Role of the Standards Process in Shaping the Internet",
+journal = "IEEE Transactions on Network Service Management",
+volume = "6",
+number = "4",
+pages = "226-239",
+year = {2009})
 
 @techreport(marlin,
 title = {Marlin Architecture Overview},
 year = {2006},
-note = {{\small \verb%http://www.marlin-community.com%}})
+url = {www.marlin-community.com})
 
 @misc (MPEG21-req,
 key = {ISO},
@@ -713,7 +742,7 @@ Framework ({MPEG-21}) -- Part 6: Rights Data Dictionary. ISO/IEC 21000-6:2004}})
 
 @conference(JaHe:04,
  author = {Pramod A. Jamkhedkar and Gregory L. Heileman},
- title = {{DRM} as a Layered System},
+ title = {{DRM} as a {L}ayered {S}ystem},
  booktitle = {Proceedings of the Fourth ACM Workshop on Digital Rights Management},
  address = {Washington, DC},
  pages = {11--21},
@@ -772,7 +801,7 @@ Framework ({MPEG-21}) -- Part 6: Rights Data Dictionary. ISO/IEC 21000-6:2004}})
 
 @article{JaHe:09,
  author = {Pramod A. Jamkhedkar and Gregory L. Heileman},
- title = {Digital Rights Management Architectures},
+ title = {Digital {R}ights {M}anagement {A}rchitectures},
  journal = {Computers Electrical Engineering},
  volume = {35},
  number = {2},
@@ -786,7 +815,7 @@ Framework ({MPEG-21}) -- Part 6: Rights Data Dictionary. ISO/IEC 21000-6:2004}})
 
 @conference(JaHeLa:10,
  author = { Pramod A. Jamkhedkar and Gregory L. Heileman and Chris Lamb},
- title = {An Interoperable Usage Management Framework},
+ title = {An {I}nteroperable {U}sage {M}anagement {F}ramework},
  booktitle = {Proceedings of the Tenth ACM Workshop on Digital Rights Management},
  address = {Chicago},
  month = {Oct.},
@@ -798,6 +827,15 @@ Framework ({MPEG-21}) -- Part 6: Rights Data Dictionary. ISO/IEC 21000-6:2004}})
  title = "Agent Technology: Foundations, Applications and Markets",
  publisher = "Springer",
  year = "1998")
+ 
+ @article(JeLiGr:08,
+author = "Paul T. Jaeger and Jimmy Lin and Justin M. Grimes",
+title = "Cloud {C}omputing and {I}nformation {P}olicy: {C}omputing in a {P}olicy {C}loud?",
+journal = "Journal of Information Technology \& Politics",
+volume = "5",
+number = "3",
+pages = "269-283",
+year = {2008})
 
 
 @misc(Ka:96,
@@ -938,7 +976,7 @@ publisher  = "ACM")
  title = {Web Services Security Rights Expression Languages Token Profile 1.1},
  howpublished = {OASIS},
  year = {2006},
- note = {http://docs.oasis-open.org/wss/oasis-wss-rel-token-profile-1.1.pdf},
+ note = {{\small \verb%http://docs.oasis-open.org/wss/oasis-wss-rel-token-profile-1.1.pdf%}},
 )
 
 @misc(ODRL-req,
@@ -946,8 +984,7 @@ publisher  = "ACM")
  howpublished = {ODRL},
  month = {Feb.},
  year = {2005},
- note = {http://odrl.net/2.0/v2req.html},
-)
+ url = {www.odrl.net/2.0/v2req.html},)
 
 
 
@@ -960,12 +997,10 @@ publisher  = "ACM")
  year = {2003})
 
 @techreport(OMADRM,
-  author = {Open Mobile Alliance},
-  title = {Enabler Release Definition for {DRM} {V}2.0},
-  institution = {Open Mobile Alliance},
-  month = {April},
-  year = {2003},
-  note = {http://xml.coverpages.org/OMA-ERELD\_DRM-V2\_0\_0-20040401-D.pdf})
+ title = {Enabler Release Definition for {DRM} {V}2.0},
+ institution = {Open Mobile Alliance},
+ year = {2003},
+  note = {{\small \verb%xml.coverpages.org/OMA-ERELD_DRM-V2_0_0-20040401-D.pdf%}})
  
  
  @techreport(Pa:01,
@@ -974,7 +1009,23 @@ publisher  = "ACM")
  institution = {Reuters},
  month = {June},
  year = {2001},
- note = {http://xml.coverpages.org/RLTC-Reuters-Reqs.pdf})
+ note = {{\small \verb%xml.coverpages.org/RLTC-Reuters-Reqs.pdf%}})
+ 
+ @INPROCEEDINGS{PaSc:06,
+    author = {Adrian Paschke and Elisabeth Schnappinger-Gerull},
+    title = {A {C}ategorization {S}cheme for {SLA} {M}etrics},
+    booktitle = {Proceedings of Multi-Conference Information Systems (MKWI06)},
+    year = {2006},
+    month = {Feb.}}
+ 
+ 
+  @conference(PaRaSh:09,
+ author = {Pankesh Patel and Ajith Ranabahu and Amit Sheth},
+ title = {Service {L}evel {A}greement in {C}loud {C}omputing},
+ booktitle = {Proceedings of the Workshop on Best Practices in Cloud Computing: Implementation and Operational Implications for the Cloud at ACM International Conference on Object-Oriented Programming, Systems, Languages, and Applications},
+ address = {Orlando, FL},
+ month = {Oct.},
+ year = {2009})
  
  @article{PaSa:04,
  author = {Jaehong Park and Ravi Sandhu},
@@ -990,8 +1041,15 @@ publisher  = "ACM")
  address = {New York, NY, USA},
  }
 
-
-
+@article{Pi:08,
+ author = {J.L. Piovesan and C.T. Abdallah and H. Tanner},
+ title = {A Hybrid Framework for Resource Allocation among Multiple Agents Moving on Discrete Environments},
+ journal = {Asian Journal of Control},
+ volume = {10},
+ number = {2},
+ year = {2008},
+ pages = {171-186},
+ }
 
 
 @conference(PoKaCrTa:04,
@@ -1081,6 +1139,14 @@ title = {Markup Reconsidered},
 institution = {Department of Computer Science, The University of Western Ontario},
 month = {Mar.},
 year = {1995})
+
+
+@manual(RBSLA,
+title = {Rule {B}ased {S}ervice {L}evel {A}greements},
+month = {Nov.},
+note = {{\small \verb%http://ibis.in.tum.de/projects/rbsla/%}},
+year = {2006})
+
 
 @misc(recovery,
 title = "Health {IT} Grants",
@@ -1182,7 +1248,7 @@ year = {2000})
  address = {Ilmenau, Germany},
  date = {May 28-29},
  year = {2004},
- note = {http://virtualgoods.tu-ilmenau.de/2004/program.html})
+ note = {{\small \verb%http://virtualgoods.tu-ilmenau.de/2004/program.html%}})
 
 @manual (sealedmedia,
 title = {Core Technology},
@@ -1235,6 +1301,15 @@ year = {2004})
  edition = "4th",
  year = "2002")
  
+@article (Ta:08,
+author = {Z. Tang and J.D. Birdwell and J. Chiasson and C.T. Abdallah and M.M. Hayat},
+title = {Resource-Constrained Load Balancing Controller for a Parallel Database},
+journal = {IEEE Transactions on Control Systems Technology},
+volume = {16},
+number = {4},
+pages = {834-840},
+year = {2008})
+ 
 @misc(TNA,
 title = {Transient Network Architecture},
 note = {{\small \verb%http://hdl.handle.net/2118/tna%}})
@@ -1285,6 +1360,28 @@ organization = {Microsoft Corporation},
 month = {Sept.},
 year = {2004})
 
+
+@manual(WSA,
+title = {Web {S}ervices {A}greement {S}pecification},
+organization = {Open Grid Forum},
+month = {Mar.},
+url = {http://www.ogf.org/documents/GFD.107.pdf},
+year = {2007})
+
+@manual(WSLA,
+title = {Web {S}ervice {L}evel {A}greement ({WSLA}) {L}anguage {S}pecification},
+organization = {IBM},
+month = {Jan.},
+url = {http://www.research.ibm.com/wsla/WSLASpecV1-20030128.pdf},
+year = {2003})
+
+@manual(WSP,
+title = {Web {S}ervices {P}olicy 1.5 {F}ramework},
+organization = {World Wide Web Consortium},
+month = {Sep.},
+url = {http://www.w3.org/TR/2007/REC-ws-policy-20070904/},
+year = {2007})
+
 @conference(XiBjFu:08,
  author = {Jianwen Xiang and Dines Bjorner and Kokichi Futatsugi},
  title = {Formal Digital License Language with {OTS/CafeOBJ} Method},
@@ -1304,7 +1401,7 @@ note = {{\small \verb%http://www.xmcl.org%}})
 key = {XRML},
 title = {e{X}tensible {R}ights {M}arkup {L}anguage ({XrML}) 2.0 {S}pecification},
 organization = {Contentguard},
-note = {http://www.xrml.org},
+url = {www.xrml.org},
 month = {November},
 year = {2001})
 
@@ -1314,7 +1411,7 @@ year = {2001})
 key = {XRML},
 title = {{XrML} 2.0 Technical Overview, Version 1.0},
 organization = {Contentguard},
-note = {http://www.xrml.org/reference/XrMLTechnicalOverviewV1.pdf},
+note = {{\small \verb%www.xrml.org/reference/XrMLTechnicalOverviewV1.pdf%}},
 month = {March},
 year = {2002})
 
@@ -1322,9 +1419,18 @@ year = {2002})
 title = {Extensible Rights Management Language ({XrML}) 2.0 },
 author = {Bill Rosenblatt},
 organization = {DRM Watch},
-note = {http://www.drmwatch.com/special/article.php/3095201},
+note = {{\small \verb%http://www.drmwatch.com/special/article.php/3095201%}},
 month = {November},
 year = {2001})
+
+@conference(YuBuDa:08,
+ author = {Lamia Youseff and Maria Butrico and Dilma Da Silva},
+ title = {Toward a {U}nified {O}ntology of {C}loud {C}omputing},
+ booktitle = {Proceedings of Grid Computing Environments Workshop },
+ address = {Austin, Tx},
+ pages = {1-10},
+ month = {Nov.},
+ year = {2008})
 
 @conference(ZhPeMaYaHa:09,
  author = {Zhiyong Zhang and Qingqi Pei and Jianfeng Ma and Lin Yang and Kefeng Fan},
