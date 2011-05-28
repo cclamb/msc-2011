@@ -32,7 +32,7 @@ With this general understanding of SLAs and related SLIs and SLOs, we can create
 \begin{equation}
 SLA = \lbrace (I,O,E,P)_{0..n} \rbrace, n \in Z \\
 \end{equation}
-Where $ I $ is an indicator function, $ \forall i \in I, i : () \rightarrow \tau $, which retrieve indicator values in $ T(n) = O(1) $.  $ O $ is a set of values, $ \forall o \in O, o : P(\tau) $, $ E $ is a set of predicates, $ \forall e \in E, e : ( () \rightarrow \tau ) \times P(\tau) \rightarrow bool $, and $ P $ is a set of penalty functions, $ \forall p \in P, p : T_{elapsed} \rightarrow Z $.
+Where $ I $ is an indicator function, $ \forall i \in I, i : () \rightarrow \tau $, which retrieve indicator values.  $ O $ is a set of values, $ \forall o \in O, o : P(\tau) $, $ E $ is a set of predicates, $ \forall e \in E, e : ( () \rightarrow \tau ) \times P(\tau) \rightarrow bool $, and $ P $ is a set of penalty functions, $ \forall p \in P, p : T_{elapsed} \rightarrow Z $.
 
 For example, say we are a customer of Nimbus Cloud Corporation, and we have an SLA in which Nimbus provides guaranteed 100\% uptime and packet latency between 300 and 750 milliseconds.  If the first obligation is breached, Nimbus will pay me a fraction of my monthly fee depending on the length of the outage.  If the second is breached, Nimbus will refund me \$0.01 per minute of breach.  This gives us a machine evaluateable SLA:
 \begin{align}
@@ -45,10 +45,13 @@ uptime\_penalty\_evaluator( T : Z ) : Z ), \notag \\
 latency\_evaluator( monitor : () \rightarrow Z, \lbrace 300, 750 \rbrace) : bool, \notag \\
 latency\_penalty\_evaluator( T : Z ) : Z) ) \notag
 \end{align}
+This more rigorous SLA allows users to monitor obligations and determine penalties when triggered.
 
 \section{Controlling with Service Level Agreements}
+Now that we have more rigorously defined our SLAs, notice that the SLA evaluation functions are predicates, and can be curried for later execution if needed.  This allows us to begin a more fundamental analysis of SLAs and their capabilities.
 
 \subsection{Computational Complexity}
+
 
 \subsection{Space Complexity}
 
