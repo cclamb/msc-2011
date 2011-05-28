@@ -28,6 +28,12 @@ While industry does seem to certainly be trending in this direction, as indicate
 \section{Service Level Agreements Defined}
 As we have seen, SLAs generally consist of a set of conditions of use under which the SLA is binding, a set of obligations that the provider will adhere to if the customer adheres to the set conditions, and two sets of penalties, one penalizing the provider when breaching obligations, and another penalizing the customer when breaching conditions of use.  Conditions are generally loosely defined, while penalties are much more rigorously constructed.  Generally however, conditions and obligations in this context can be viewed as defined by {\it objectives} which are measured by {\it indicators}.  In the case of provider-centric obligations, these are commonly defined as Service Level Indicators (SLIs) and Objectives (SLOs).
 
+With this general understanding of SLAs and related SLIs and SLOs, we can create a non-specific definition of an SLA as a set of tuples:
+\begin{equation}
+SLA = \lbrace (I,0,E,P)_{0..n} \rbrace, n \in Z \\
+\end{equation}
+Where $ I $ is an indicator function, $ \forall i \in I, i : Z $, which retrieve indicator values in $ T(n) = O(1) $.  $ O $ is a set of values, $ \forall o \in O, o : P(Z) $, $ E $ is a set of predicates, $ \forall e \in E, e : Z \times P(Z) \rightarrow bool $, and $ P $ is a set of penalty functions, $ \forall p \in P, p : T_{elapsed} \rightarrow Z $.
+
 
 
 \section{Controlling with Service Level Agreements}
