@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  28 MAY 2011 13:07
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  28 MAY 2011 13:45
 entering extended mode
  %&-line parsing enabled.
 **service-ctrl.tex
@@ -246,9 +246,9 @@ File: ./images/blank.jpg Graphic file (type jpg)
  <use ./images/blank.jpg>
 [5 <./images/blank.jpg>]
 File: ./images/blank.jpg Graphic file (type jpg)
- <use ./images/blank.jpg> [6] [7])
+ <use ./images/blank.jpg> [6] [7] [8])
 (./content/control.tex) (./content/conclusion.tex) (./content/references.tex
-(./service-ctrl.bbl [8] [9] [10])) [11] (./service-ctrl.aux)
+(./service-ctrl.bbl [9] [10] [11])) [12] (./service-ctrl.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -260,10 +260,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1984 strings out of 495061
- 23811 string characters out of 1182622
- 76106 words of memory out of 3000000
- 5132 multiletter control sequences out of 15000+50000
+ 1985 strings out of 495061
+ 23828 string characters out of 1182622
+ 76114 words of memory out of 3000000
+ 5133 multiletter control sequences out of 15000+50000
  13185 words of font info for 51 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  27i,11n,24p,1721b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -279,9 +279,9 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1
 /public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
 onts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmt
 t9.pfb>
-Output written on service-ctrl.pdf (11 pages, 197535 bytes).
+Output written on service-ctrl.pdf (12 pages, 199253 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
+ 94 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

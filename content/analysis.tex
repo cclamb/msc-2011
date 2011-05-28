@@ -25,7 +25,7 @@ While current cloud service providers focus on a single quality-of-service metri
 
 While industry does seem to certainly be trending in this direction, as indicated by the development of tools supporting user-centric infrastructure monitoring and management, this kind of control is not yet embedded into contracts of any kind, much less agreements that are machine-readable. Furthermore, this kind of management is still manual and cannot scale to the levels needed to manage Internet-scale systems.
 
-\section{Service Level Agreements Defined}
+\section{Service Level Agreements Defined}\label{sec:SLA-defined}
 As we have seen, SLAs generally consist of a set of conditions of use under which the SLA is binding, a set of obligations that the provider will adhere to if the customer adheres to the set conditions, and two sets of penalties, one penalizing the provider when breaching obligations, and another penalizing the customer when breaching conditions of use.  Conditions are generally loosely defined, while penalties are much more rigorously constructed.  Generally however, conditions and obligations in this context can be viewed as defined by {\it objectives} which are measured by {\it indicators}.  In the case of provider-centric obligations, these are commonly defined as Service Level Indicators (SLIs) and Objectives (SLOs).
 
 With this general understanding of SLAs and related SLIs and SLOs, we can create a non-specific definition of an SLA as a set of tuples:
@@ -51,7 +51,7 @@ This more rigorous SLA allows users to monitor obligations and determine penalti
 Now that we have more rigorously defined our SLAs, notice that the SLA evaluation functions are predicates, and can be curried for later execution if needed.  This allows us to begin a more fundamental analysis of SLAs and their capabilities.
 
 \subsection{Computational Complexity}
-
+In Section \ref{sec:SLA-defined}, we defined an SLA to essentially be a sequence of evaluatable predicates.  These evaluatable predicates are related in some way; currently, an SLA is the conjunction of these predicates.  As these predicates can be created prior to evaluation and at evaluation time require no specific arguments once appropriately curried, we can define these predicates as as boolean {\it terms}.  Ergo, once we've created a group of predicates and transformed them into terms, we are evaluating an arbitrary boolean equation - in other words, we are verifying an instance of the  $ Boolean Satisfiability Problem $, or $ SAT $.
 
 \subsection{Space Complexity}
 
