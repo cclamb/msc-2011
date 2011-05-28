@@ -1,4 +1,4 @@
-\section{Cloud System Models}
+\section{Cloud System Models}\label{sec:cloud-models}
 Current cloud systems do not ignore SLA restrictions; rather, they are designed from the ground up to support a single type of SLA.  That SLA generally encompasses total system uptime and some kind of response time metric \cite{ctrl:amazon-sla,ctrl:rackspace-sla}.  If for some reason the cloud provider can no longer adhere to the terms outlined, some kind of compensation strategy applies to affected customers.  Future cloud providers can very well use the ability to support multiple SLAs as a way to differentiate available products from competitors.
 
 \subsection{Current Model}
@@ -10,7 +10,7 @@ Amazon's Cloud Watch products used in tandem with Auto Scaling provide the abili
 \centering
 \includegraphics[width=3.4in]{blank}
 \caption{Amazon Auto Scaling}
-\label{fig:RuntimeView}
+\label{fig:current-cloud-model}
 \end{figure}
 
 \subsection{Future Reference Model}
@@ -20,7 +20,7 @@ While current cloud service providers focus on a single quality-of-service metri
 \centering
 \includegraphics[width=3.4in]{blank}
 \caption{Multiple SLA Architectural Integration}
-\label{fig:RuntimeView}
+\label{fig:future-cloud-model}
 \end{figure}
 
 While industry does seem to certainly be trending in this direction, as indicated by the development of tools supporting user-centric infrastructure monitoring and management, this kind of control is not yet embedded into contracts of any kind, much less agreements that are machine-readable. Furthermore, this kind of management is still manual and cannot scale to the levels needed to manage Internet-scale systems.
@@ -47,7 +47,7 @@ latency\_penalty\_evaluator( T : Z ) : Z) ) \notag
 \end{align}
 This more rigorous SLA allows users to monitor obligations and determine penalties when triggered.
 
-\section{Controlling with Service Level Agreements}
+\section{Controlling with Service Level Agreements}\label{sec:SLA-analysis}
 Now that we have more rigorously defined our SLAs, notice that the SLA evaluation functions are predicates, and can be curried for later execution if needed.  This allows us to begin a more fundamental analysis of SLAs and their capabilities.
 
 \subsection{Computational and Space Complexity}

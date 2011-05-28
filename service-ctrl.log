@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  28 MAY 2011 13:45
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  28 MAY 2011 16:16
 entering extended mode
  %&-line parsing enabled.
 **service-ctrl.tex
@@ -132,15 +132,7 @@ File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-
-LaTeX Warning: Unused global option(s):
-    [conference].
-
-(./service-ctrl.aux
-
-LaTeX Warning: Label `fig:RuntimeView' multiply defined.
-
-)
+(./service-ctrl.aux)
 \openout1 = `service-ctrl.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
@@ -193,24 +185,17 @@ Overfull \hbox (8.67427pt too wide) in paragraph at lines 32--32
 
 (./content/abstract.tex) (./content/introduction.tex [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Reference `sec:single' on page 3 undefined on input line 13.
-
-
-LaTeX Warning: Reference `sec:singleUm' on page 3 undefined on input line 13.
+LaTeX Warning: Citation `ctrl:amazon-cloud-watch' on page 2 undefined on input 
+line 5.
 
 
-LaTeX Warning: Reference `sec:multiple' on page 3 undefined on input line 13.
+LaTeX Warning: Reference `sec:control' on page 2 undefined on input line 11.
 
+[2]
 
-Overfull \hbox (6.0562pt too wide) in paragraph at lines 16--17
-\OT1/cmr/m/n/10 Cloud com-put-ing is emerg-ing as the fu-ture of util-ity sys-t
-ems host-ing for consumer-
- []
-
-
-LaTeX Warning: Citation `BuYeVeBrBr:09' on page 3 undefined on input line 18.
+LaTeX Warning: Citation `BuYeVeBrBr:09' on page 3 undefined on input line 16.
 
 [3]) (./content/analysis.tex
 
@@ -220,19 +205,19 @@ LaTeX Warning: Citation `ctrl:amazon-sla' on page 4 undefined on input line 2.
 LaTeX Warning: Citation `ctrl:rackspace-sla' on page 4 undefined on input line 
 2.
 
-[4]
 
-LaTeX Warning: Citation `ctrl:google-arch' on page 5 undefined on input line 5.
-
+LaTeX Warning: Citation `ctrl:google-arch' on page 4 undefined on input line 5.
 
 
-LaTeX Warning: Citation `ctrl:amazon-best-practice' on page 5 undefined on inpu
+
+LaTeX Warning: Citation `ctrl:amazon-best-practice' on page 4 undefined on inpu
 t line 5.
 
 
-LaTeX Warning: Citation `ctrl:amazon-fault-tolerant' on page 5 undefined on inp
+LaTeX Warning: Citation `ctrl:amazon-fault-tolerant' on page 4 undefined on inp
 ut line 5.
 
+[4]
 
 LaTeX Warning: Citation `ctrl:amazon-cloud-watch' on page 5 undefined on input 
 line 7.
@@ -246,24 +231,29 @@ File: ./images/blank.jpg Graphic file (type jpg)
  <use ./images/blank.jpg>
 [5 <./images/blank.jpg>]
 File: ./images/blank.jpg Graphic file (type jpg)
- <use ./images/blank.jpg> [6] [7] [8])
-(./content/control.tex) (./content/conclusion.tex) (./content/references.tex
-(./service-ctrl.bbl [9] [10] [11])) [12] (./service-ctrl.aux)
+ <use ./images/blank.jpg> [6] [7] [8]
+
+LaTeX Warning: Citation `comptheory:sipser:intro-comp-theory' on page 9 undefin
+ed on input line 56.
+
+
+LaTeX Warning: Citation `comptheory:papadimitriou:computational-complexity' on 
+page 9 undefined on input line 56.
+
+) (./content/control.tex) (./content/conclusion.tex) (./content/references.tex
+(./service-ctrl.bbl [9] [10])) [11] (./service-ctrl.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 1985 strings out of 495061
- 23828 string characters out of 1182622
- 76114 words of memory out of 3000000
- 5133 multiletter control sequences out of 15000+50000
+ 1978 strings out of 495061
+ 23854 string characters out of 1182622
+ 76032 words of memory out of 3000000
+ 5126 multiletter control sequences out of 15000+50000
  13185 words of font info for 51 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  27i,11n,24p,1721b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -279,9 +269,9 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1
 /public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
 onts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmt
 t9.pfb>
-Output written on service-ctrl.pdf (12 pages, 199253 bytes).
+Output written on service-ctrl.pdf (11 pages, 196702 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
+ 91 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

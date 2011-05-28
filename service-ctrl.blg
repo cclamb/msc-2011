@@ -17,58 +17,60 @@ Warning--string name "december" is undefined
 --line 72 of file bib/ctrl.bib
 Warning--string name "december" is undefined
 --line 84 of file bib/ctrl.bib
+Warning--I didn't find a database entry for "ctrl:amazon-cloud-watch"
 Warning--I didn't find a database entry for "BuYeVeBrBr:09"
 Warning--I didn't find a database entry for "ctrl:amazon-sla"
 Warning--I didn't find a database entry for "ctrl:rackspace-sla"
 Warning--I didn't find a database entry for "ctrl:google-arch"
 Warning--I didn't find a database entry for "ctrl:amazon-best-practice"
 Warning--I didn't find a database entry for "ctrl:amazon-fault-tolerant"
-Warning--I didn't find a database entry for "ctrl:amazon-cloud-watch"
 Warning--I didn't find a database entry for "ctrl:amazon-auto-scale"
+Warning--I didn't find a database entry for "comptheory:sipser:intro-comp-theory"
+Warning--I didn't find a database entry for "comptheory:papadimitriou:computational-complexity"
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 17 entries,
+You've used 8 entries,
             4039 wiz_defined-function locations,
-            936 strings with 10818 characters,
-and the built_in function-call counts, 14818 in all, are:
-= -- 1186
-> -- 351
-< -- 136
-+ -- 194
-- -- 58
-* -- 739
-:= -- 2149
-add.period$ -- 35
-call.type$ -- 17
-change.case$ -- 17
-chr.to.int$ -- 312
-cite$ -- 17
-duplicate$ -- 1057
-empty$ -- 1195
-format.name$ -- 73
-if$ -- 3459
+            875 strings with 9394 characters,
+and the built_in function-call counts, 7859 in all, are:
+= -- 636
+> -- 208
+< -- 76
++ -- 113
+- -- 36
+* -- 404
+:= -- 1146
+add.period$ -- 17
+call.type$ -- 8
+change.case$ -- 8
+chr.to.int$ -- 171
+cite$ -- 8
+duplicate$ -- 540
+empty$ -- 577
+format.name$ -- 43
+if$ -- 1821
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 182
-newline$ -- 78
-num.names$ -- 17
-pop$ -- 402
+int.to.str$ -- 8
+missing$ -- 93
+newline$ -- 51
+num.names$ -- 8
+pop$ -- 191
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1134
+skip$ -- 604
 stack$ -- 0
-substring$ -- 751
-swap$ -- 902
-text.length$ -- 32
+substring$ -- 414
+swap$ -- 488
+text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 17
+type$ -- 8
 warning$ -- 0
-while$ -- 67
-width$ -- 19
-write$ -- 197
-(There were 14 warnings)
+while$ -- 34
+width$ -- 9
+write$ -- 112
+(There were 16 warnings)
