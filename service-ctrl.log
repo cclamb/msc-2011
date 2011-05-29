@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  28 MAY 2011 16:16
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  28 MAY 2011 18:27
 entering extended mode
  %&-line parsing enabled.
 **service-ctrl.tex
@@ -135,18 +135,18 @@ File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
 (./service-ctrl.aux)
 \openout1 = `service-ctrl.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
  (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count100
@@ -160,88 +160,46 @@ LaTeX Font Info:    ... okay on input line 30.
 \MPnumerator=\count104
 \everyMPtoPDFconversion=\toks27
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
  (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 32.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 33.
 
-LaTeX Font Info:    No file OMScmtt.fd. on input line 32.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 33.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 32.
+(Font)              for symbol `textbraceleft' on input line 33.
 
+(./content/abstract.tex [1
 
-Overfull \hbox (8.67427pt too wide) in paragraph at lines 32--32
- [][] 
- []
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./content/introduction.t
+ex [2]
 
-(./content/abstract.tex) (./content/introduction.tex [1
+LaTeX Warning: Reference `sec:control' on page 3 undefined on input line 11.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Citation `ctrl:amazon-cloud-watch' on page 2 undefined on input 
-line 5.
-
-
-LaTeX Warning: Reference `sec:control' on page 2 undefined on input line 11.
-
-[2]
-
-LaTeX Warning: Citation `BuYeVeBrBr:09' on page 3 undefined on input line 16.
-
-[3]) (./content/analysis.tex
-
-LaTeX Warning: Citation `ctrl:amazon-sla' on page 4 undefined on input line 2.
-
-
-LaTeX Warning: Citation `ctrl:rackspace-sla' on page 4 undefined on input line 
-2.
-
-
-LaTeX Warning: Citation `ctrl:google-arch' on page 4 undefined on input line 5.
-
-
-
-LaTeX Warning: Citation `ctrl:amazon-best-practice' on page 4 undefined on inpu
-t line 5.
-
-
-LaTeX Warning: Citation `ctrl:amazon-fault-tolerant' on page 4 undefined on inp
-ut line 5.
-
-[4]
-
-LaTeX Warning: Citation `ctrl:amazon-cloud-watch' on page 5 undefined on input 
-line 7.
-
-
-LaTeX Warning: Citation `ctrl:amazon-auto-scale' on page 5 undefined on input l
-ine 7.
-
+[3]) (./content/analysis.tex [4]
 <./images/blank.jpg, id=22, 303.1325pt x 78.2925pt>
 File: ./images/blank.jpg Graphic file (type jpg)
  <use ./images/blank.jpg>
 [5 <./images/blank.jpg>]
 File: ./images/blank.jpg Graphic file (type jpg)
- <use ./images/blank.jpg> [6] [7] [8]
+ <use ./images/blank.jpg> [6] [7] [8] [9])
+(./content/control.tex) (./content/conclusion.tex) (./content/references.tex
+(./service-ctrl.bbl [10]
+Overfull \hbox (12.83401pt too wide) in paragraph at lines 83--85
+[]\OT1/cmr/m/n/10 ``Rackspace Cloud Le-gal - SLA,'' http://www.rackspace.com/cl
+oud/legal/sla/,
+ []
 
-LaTeX Warning: Citation `comptheory:sipser:intro-comp-theory' on page 9 undefin
-ed on input line 56.
-
-
-LaTeX Warning: Citation `comptheory:papadimitriou:computational-complexity' on 
-page 9 undefined on input line 56.
-
-) (./content/control.tex) (./content/conclusion.tex) (./content/references.tex
-(./service-ctrl.bbl [9] [10])) [11] (./service-ctrl.aux)
+[11])) [12] (./service-ctrl.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -252,7 +210,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  1978 strings out of 495061
  23854 string characters out of 1182622
- 76032 words of memory out of 3000000
+ 76074 words of memory out of 3000000
  5126 multiletter control sequences out of 15000+50000
  13185 words of font info for 51 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
@@ -269,9 +227,9 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1
 /public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
 onts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmt
 t9.pfb>
-Output written on service-ctrl.pdf (11 pages, 196702 bytes).
+Output written on service-ctrl.pdf (12 pages, 199200 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
+ 94 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
