@@ -34,7 +34,7 @@ SLA = \lbrace (I,O,E,P)_{0..n} \rbrace, n \in Z \\
 \end{equation}
 Where $ I $ is an indicator function, $ \forall i \in I, i : () \rightarrow \tau $, which retrieve indicator values.  $ O $ is a set of values, $ \forall o \in O, o : P(\tau) $, $ E $ is a set of predicates, $ \forall e \in E, e : ( () \rightarrow \tau ) \times P(\tau) \rightarrow bool $, and $ P $ is a set of penalty functions, $ \forall p \in P, p : T_{elapsed} \rightarrow Z $.
 
-For example, say we are a customer of Nimbus Cloud Corporation, and we have an SLA in which Nimbus provides guaranteed 100\% uptime and packet latency between 300 and 750 milliseconds.  If the first obligation is breached, Nimbus will pay me a fraction of my monthly fee depending on the length of the outage.  If the second is breached, Nimbus will refund me \$0.01 per minute of breach.  This gives us a machine evaluateable SLA:
+For example, say we are a customer of Nimbus Cloud Corporation, and we have an SLA in which Nimbus provides guaranteed 100\% uptime and packet latency between 300 and 750 milliseconds.  If the first obligation is breached, Nimbus will pay me a fraction of my monthly fee depending on the length of the outage.  If the second is breached, Nimbus will refund \$0.01 per minute of breach.  This gives us a machine evaluateable SLA:
 \begin{align}
 SLA_{nimbus} = ( ( uptime\_monitor() : bool, \\
 \lbrace true \rbrace, \notag \\
@@ -53,14 +53,11 @@ Now that we have more rigorously defined our SLAs, notice that the SLA evaluatio
 \subsection{Computational and Space Complexity}
 In Section \ref{sec:SLA-defined}, we defined an SLA to essentially be a sequence of evaluatable predicates.  These evaluatable predicates are related in some way; currently, an SLA is the conjunction of these predicates.  As these predicates can be created prior to evaluation and at evaluation time require no specific arguments once appropriately curried, we can define these predicates as as boolean {\it terms}.  Ergo, once we've created a group of predicates and transformed them into terms, we are evaluating an arbitrary boolean equation - in other words, we are verifying an instance of the Boolean Satisfiability Problem, or $ SAT $.
 
-$ SAT $ is NP-Complete, and very difficult to solve on today's computing systems \cite{comptheory:sipser:intro-comp-theory}.  $ 3SAT $, a subset of $ SAT $, is equally difficult, while $ 2SAT $ is not.  $ 2SAT $ is firmly in the computational class $ P $; in fact, $ 2SAT $ is NL-Complete as well, so we know it is solvable in an amount of space logarithmic in the number of boolean terms\cite{comptheory:papadimitriou:computational-complexity}.  Furthermore, it is widely held that both $ SAT $ and $ 3SAT $ cannot be solved in logarithmic or less space.
+$ SAT $ is NP-Complete, and very difficult to solve on today's computing systems \cite{comptheory:sipser:intro-comp-theory}.  $ 3SAT $, a subset of $ SAT $, is equally difficult, while $ 2SAT $ is not.  $ 2SAT $ is firmly in the computational class $ P $; in fact, $ 2SAT $ is NL-Complete as well, so we know it is solvable in an amount of space logarithmic in the number of boolean terms\cite{comptheory:papadimitriou:computational-complexity}.  Furthermore, it is widely held that both $ SAT $ and $ 3SAT $ cannot be solved in logarithmic or less space.  Furthermore, as $ 2SAT $ is NL-Complete, we also know it is contained within NC$^{2}$, and as such is highly parallelizeable \cite{comptheory:papadimitriou:computational-complexity}.
 
 \subsection{Verification v. Solution}
 General SLA use focuses on verification rather than solution.  That is to say, with respect to a given SLA, both the user and provider is more concerned with whether the system is currently compliant with all SLA terms.  In future use, this may very well no longer be the case.  For example, imagine a cloud system from the user's perspective that spans multiple could providers; a single general purpose provider for general computing, data storage, and queuing, a specific-use provider for an unique set of algorithms of some kind (say, market modeling algorithms), and finally a Content Delivery Network (CDN) provider.  Each of these providers have a unique SLA with multiple conditions.  In this particular case, the user may need to know if the given system can work together at all under the terms of the SLAs, and if so, under what conditions.  As the user has combined all the SLAs composing the system and is attempting to find some combination of terms that satisfies the SLA, the user is in essence attempting to find a solution for this instance of $ SAT $; they are attempting to solve $ SAT $, an known NP-Complete problem.  Likewise, a cloud provider may need to solve similar problems where the SLAs at issue are the whole of SLAs issued to the entire provider's customer base.
 
+Nontrivial generalized SLAs may be too difficult to solve effectively without accepting some approximation error or using probabilistic methods.  If these SLAs are formulated in at most a $ 2SAT $ style problem however, they are suddenly much more tractable, easier to work with, and amenable to efficient solution.  Keep in mind, even generalized SLAs can be efficiently verified.
+
 \subsection{Approximation and other techniques}
-
-
-
-
-
