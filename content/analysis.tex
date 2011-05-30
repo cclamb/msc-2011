@@ -34,15 +34,15 @@ SLA = \lbrace (I,O,E,P)_{0..n} \rbrace, n \in Z \\
 \end{equation}
 Where $ I $ is an indicator function, $ \forall i \in I, i : () \rightarrow \tau $, which retrieve indicator values.  $ O $ is a set of values, $ \forall o \in O, o : P(\tau) $, $ E $ is a set of predicates, $ \forall e \in E, e : ( () \rightarrow \tau ) \times P(\tau) \rightarrow bool $, and $ P $ is a set of penalty functions, $ \forall p \in P, p : T_{elapsed} \rightarrow Z $.
 
-For example, say we are a customer of Nimbus Cloud Corporation, and we have an SLA in which Nimbus provides guaranteed 100\% uptime and packet latency between 300 and 750 milliseconds.  If the first obligation is breached, Nimbus will pay me a fraction of my monthly fee depending on the length of the outage.  If the second is breached, Nimbus will refund \$0.01 per minute of breach.  This gives us a machine evaluateable SLA:
+For example, say we are a customer of Nimbus Cloud Corporation, and we have an SLA in which Nimbus provides guaranteed 100\% uptime and packet latency between 300 and 650 milliseconds.  If the first obligation is breached, Nimbus will pay me a fraction of my monthly fee depending on the length of the outage.  If the second is breached, Nimbus will refund \$0.01 per minute of breach.  This gives us a machine evaluateable SLA:
 \begin{align}
 SLA_{nimbus} = ( ( uptime\_monitor() : bool, \\
 \lbrace true \rbrace, \notag \\
 uptime\_evaluator( monitor : () \rightarrow bool, \lbrace true \rbrace) : bool, \notag \\
 uptime\_penalty\_evaluator( T : Z ) : Z ), \notag \\
 ( latency\_monitor() : Z, \notag \\
-\lbrace 300, 750 \rbrace, \notag \\
-latency\_evaluator( monitor : () \rightarrow Z, \lbrace 300, 750 \rbrace) : bool, \notag \\
+\lbrace 300, 650 \rbrace, \notag \\
+latency\_evaluator( monitor : () \rightarrow Z, \lbrace 300, 650 \rbrace) : bool, \notag \\
 latency\_penalty\_evaluator( T : Z ) : Z) ) \notag
 \end{align}
 This more rigorous SLA allows users to monitor obligations and determine penalties when triggered.
@@ -58,6 +58,4 @@ $ SAT $ is NP-Complete, and very difficult to solve on today's computing systems
 \subsection{Verification v. Solution}
 General SLA use focuses on verification rather than solution.  That is to say, with respect to a given SLA, both the user and provider is more concerned with whether the system is currently compliant with all SLA terms.  In future use, this may very well no longer be the case.  For example, imagine a cloud system from the user's perspective that spans multiple could providers; a single general purpose provider for general computing, data storage, and queuing, a specific-use provider for an unique set of algorithms of some kind (say, market modeling algorithms), and finally a Content Delivery Network (CDN) provider.  Each of these providers have a unique SLA with multiple conditions.  In this particular case, the user may need to know if the given system can work together at all under the terms of the SLAs, and if so, under what conditions.  As the user has combined all the SLAs composing the system and is attempting to find some combination of terms that satisfies the SLA, the user is in essence attempting to find a solution for this instance of $ SAT $; they are attempting to solve $ SAT $, an known NP-Complete problem.  Likewise, a cloud provider may need to solve similar problems where the SLAs at issue are the whole of SLAs issued to the entire provider's customer base.
 
-Nontrivial generalized SLAs may be too difficult to solve effectively without accepting some approximation error or using probabilistic methods.  If these SLAs are formulated in at most a $ 2SAT $ style problem however, they are suddenly much more tractable, easier to work with, and amenable to efficient solution.  Keep in mind, even generalized SLAs can be efficiently verified.
-
-\subsection{Approximation and other techniques}
+Nontrivial generalized SLAs may be too difficult to solve effectively without accepting some kind of approximate heuristic or $ SAT $ Solver \cite{Hochbaum:1996:AAN:241938,ctrl:satcompetition}.  If these SLAs are formulated in at most a $ 2SAT $ style problem however, they are suddenly much more tractable, easier to work with, and amenable to efficient solution.  Keep in mind, even generalized SLAs can be efficiently verified.

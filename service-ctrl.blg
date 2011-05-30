@@ -6,60 +6,61 @@ Database file #1: bib/emr.bib
 Database file #2: bib/drm.bib
 Database file #3: bib/ctrl.bib
 Warning--string name "december" is undefined
---line 107 of file bib/ctrl.bib
+--line 123 of file bib/ctrl.bib
 Warning--string name "december" is undefined
---line 119 of file bib/ctrl.bib
+--line 135 of file bib/ctrl.bib
 Warning--string name "december" is undefined
---line 131 of file bib/ctrl.bib
+--line 147 of file bib/ctrl.bib
 Warning--string name "december" is undefined
---line 143 of file bib/ctrl.bib
+--line 159 of file bib/ctrl.bib
 Warning--string name "december" is undefined
---line 155 of file bib/ctrl.bib
+--line 171 of file bib/ctrl.bib
+Database file #4: bib/readings.bib
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty booktitle in ctrl:google-arch
 
 Done.
-You've used 17 entries,
+You've used 25 entries,
             4039 wiz_defined-function locations,
-            902 strings with 10169 characters,
-and the built_in function-call counts, 10907 in all, are:
-= -- 860
-> -- 235
-< -- 80
-+ -- 127
-- -- 41
-* -- 512
-:= -- 1677
-add.period$ -- 36
-call.type$ -- 17
-change.case$ -- 16
-chr.to.int$ -- 177
-cite$ -- 18
-duplicate$ -- 825
-empty$ -- 927
-format.name$ -- 49
-if$ -- 2495
+            956 strings with 11706 characters,
+and the built_in function-call counts, 16670 in all, are:
+= -- 1299
+> -- 372
+< -- 123
++ -- 200
+- -- 65
+* -- 787
+:= -- 2505
+add.period$ -- 53
+call.type$ -- 25
+change.case$ -- 26
+chr.to.int$ -- 279
+cite$ -- 26
+duplicate$ -- 1257
+empty$ -- 1450
+format.name$ -- 78
+if$ -- 3846
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 148
-newline$ -- 82
-num.names$ -- 13
-pop$ -- 357
+int.to.str$ -- 25
+missing$ -- 229
+newline$ -- 106
+num.names$ -- 21
+pop$ -- 557
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 843
+skip$ -- 1276
 stack$ -- 0
-substring$ -- 420
-swap$ -- 646
-text.length$ -- 21
+substring$ -- 667
+swap$ -- 987
+text.length$ -- 30
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 17
+type$ -- 25
 warning$ -- 1
-while$ -- 40
-width$ -- 19
-write$ -- 183
+while$ -- 65
+width$ -- 27
+write$ -- 255
 (There were 6 warnings)
