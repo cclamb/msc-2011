@@ -1,4 +1,4 @@
-\section{Control Theoretic Model}
+\section{Control Theoretic Model}\label{sec:control}
 \label{data}
 
 Modeling the behavior of the workload in a computing infrastructure is challenging given the difficulties to non-linear identification techniques, the model uncertainty
@@ -7,13 +7,13 @@ to cover the main features of the workload in a computing infrastructure such as
 the resource allocation and a given performance measure \cite{Padala-2009},\cite{Nathuji-2010}.
 
 Optimal control is a common approach to calculate the resource allocation according to the actual workflow and the power consumption of the system 
-by minimizing a cost function. This minimization can be carried out by using partial derivatives \cite{Malrait-2010},\cite{Abdelzaher-SIGMETRICS-2008}, Linear Quadratic Control (LQC)
-\cite{Padala-2009},\cite{Fu-FeBID-2009}, or by applying Model Predictive Control (MPC) \cite{Nathuji-2010},\cite{Wang-2010}. The optimization problem
+by minimizing a cost function. This minimization can be carried out by using partial derivatives \cite{Abdelzaher-SIGMETRICS-2008},\cite{Malrait-2010}, Linear Quadratic Control (LQC)
+\cite{Fu-FeBID-2009},\cite{Padala-2009}, or by applying Model Predictive Control (MPC) \cite{Nathuji-2010},\cite{Wang-2010}. The optimization problem
 consists of calculating a control input such that the cost of the control law is minimized while the required SLO of
 a set of applications is partially or completely reached.
 
 \subsection{Model Estimation and Optimal Control}\label{workopcontrol}
-In previous works \cite{Padala-2009},\cite{Abdelzaher-SIGMETRICS-2008}, the implemented control technique is composed of an online 
+In previous works \cite{Abdelzaher-SIGMETRICS-2008},\cite{Padala-2009}, the implemented control technique is composed of an online 
 model estimator and a Multi-Input Multi-Output resource allocation controller as shown in Fig. \ref{block}. The main goal of this controller is to optimally allocate the virtualized resources 
 on a computing infrastructure so that the system can fulfill the required SLO. In current data center architectures, every tier of an application resides in a \emph{virtual machine} (VM) 
 and a multi-tier application can run on several nodes. In this set up, several applications can be executed in one node, thus reducing the number 
@@ -31,7 +31,7 @@ of nodes in the computing infrastructure and minimizing costs.
 The model estimator uses an Auto-Regressive (AR) model to approximate the relation between the resource allocation of the application
 $a \in A$, namely $\mathbf{u}_{a}(k) = \{ \mathbf{u}_{a,r,t}:r \in R, t \in T_{a} \}$ and the peformance output $y_{a}(k)$ related to $a$. The AR model proposed in \cite{Abdelzaher-SIGMETRICS-2008} is given by,
 \begin{eqnarray}
- y_{a}(k) &=& \sum_{l=1}^{n}a_{l}(k)y_{a}(k-l) \nonumber \\
+ y_{a}(k+1) &=& \sum_{l=1}^{n}a_{l}(k)y_{a}(k+1-l) \nonumber \\
 & + & \sum_{m=0}^{n-1}\mathbf{b_{m}}^{T}(k)\mathbf{u}_{a}(k-m). \nonumber
 \end{eqnarray}
 We denote by $\mathbf{u}_{a,r,t}$ the actual allocation of the resource $r \in R$ for the application $a \in A$ in tier $t \in T_{a}$.
@@ -41,16 +41,16 @@ through a recursive least square (RLS) algorithm.
 The optimizer searches for the required allocation vector ${\mathbf{\bar{u}}_{a}}$ that guarantees the performance target of the application $a$ while avoiding oscillations in 
 resource allocation. This may be achieved by calculating $\mathbf{\bar{u}}_{a}$ that minimizes the following cost function,
 \begin{equation}
- J_{a} = \left(y_{a}(k) - \bar{y}_{a}(k) \right)^{2} + q \| \mathbf{u}_{a}(k) - {\mathbf{u}_{a}}(k-1) \|^{2}.
+ J_{a} = \left(y_{a}(k+1) - \bar{y}_{a}(k+1) \right)^{2} + q \| \mathbf{\bar{u}}_{a}(k) - {\mathbf{u}_{a}}(k-1) \|^{2}.
 \label{cost01}
 \end{equation}
 where $\bar{y}_{a}(k)$ is the desired performance associated to the application $a$. Note that the function $J_a$ is minimized for $\left(y_{a}(k) - \bar{y}_{a}(k) \right)^{2} \approx 0$
  leading the application $a$ to approach the desired performance. Furthermore (\ref{cost01}) is minimized if the difference 
-$\| \mathbf{u}_{a}(k) - {\mathbf{u}_{a}}(k-1) \|$ becomes smaller \emph{i.e.} when large changes in the resource allocation  during a sample period are avoided.
+$\| {\mathbf{u^{*}}_{a}} - {\mathbf{u}_{a}}(k-1) \|$ becomes smaller \emph{i.e.} when large changes in the resource allocation  during a sample period are avoided.
 By solving $\frac{\partial J_{a}}{\partial{\mathbf{u}(k)}} = 0$ for $\mathbf{u}_{a}(k)$ the optimal control law for resource allocation is given by,
 \begin{eqnarray}
- {\mathbf{\bar{u}}_{a}}(k) & = & ({\mathbf{b}_{0}\mathbf{b}_{0}}^{T} + qI)^{-1}\left[ \left(\bar{y}_{a}(k) - \sum_{l=1}^{n}a_{l}y_{a}(k-l)\right. \right. \nonumber \\
-& & \left. \left.- \sum_{m=1}^{n-1}\mathbf{b}_{m}^{T}\mathbf{u}_{a}(k-m)\right)\mathbf{b_{0}} + q\mathbf{u}_{a}(k-1) \right], \nonumber
+ {\mathbf{\bar{u}}_{a}^{*}}(k) & = & ({\mathbf{b}_{0}\mathbf{b}_{0}}^{T} + qI)^{-1}\left[ \left(\bar{y}_{a} - \sum_{l=1}^{n}a_{l}y_{a}(k-l+1)\right. \right. \nonumber \\
+& & \left. \left.- \sum_{m=1}^{n-1}\mathbf{b}_{m}^{T}\mathbf{u}_{a}(k-m)\right) + q\mathbf{u}_{a}(k-1) \right], \nonumber
 \end{eqnarray}
 with $I$ the identity matrix and $q \in \Re$ a scaling factor. Note that, $a_i, b_j$ with $i=1,2,\cdots,n$, $j=0,1,2,\cdots,n-1$ are functions of $k$.
 
@@ -96,11 +96,11 @@ the SLO values per application we require as a client and put them in the input 
 performance are straighforward, \emph{e.g.,} 
 
 \begin{eqnarray}
-&\left( (\ell \geq 300 ms) \land (\ell^{-1} \geq \frac{1}{650ms}) \right),& \nonumber \\
-&\left(t_{u} \geq 95\%\right),& \nonumber \\
-&\left(\alpha^{-1} \geq \frac{1}{10\%}\right).& \nonumber
+&\left( \ell \geq 300 ms \land \ell^{-1} \geq \frac{1}{650ms} \right)& \nonumber \\
+&\left(t_{u} \geq 95\%\right)& \nonumber \\
+&\left(\alpha^{-1} \geq \frac{1}{10\%}\right)& \nonumber
 \end{eqnarray}
 Using the previous conditions the indicator functions will return \emph{true} if $300ms \leq \ell \leq 650ms$, similarly
- it will return \emph{true} if the minimum uptime is provided and the abandon rate is under the indicated threshold. Notice that other performance indexes can be used such that
-CPU utilization, memory usage or even the number of active processors in the computing infrastructure. Then, the SLOs and 
-actually the SLIs are easily mapped into the depicted theoretical controls approach.
+ it will return \emph{true} if the minimum uptime is provided and the abandon rate is under the indicated threshold. Notice that other performance indexes can be used such as
+CPU utilization, memory usage or even the number of active processors in the computing infrastructure. Then, the SLO and 
+actually the Service Level Indicators (SLI) are easily mapped into the depicted theoretical controls approach.
