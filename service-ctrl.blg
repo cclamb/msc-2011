@@ -6,15 +6,15 @@ Database file #1: bib/emr.bib
 Database file #2: bib/drm.bib
 Database file #3: bib/ctrl.bib
 Warning--string name "december" is undefined
---line 150 of file bib/ctrl.bib
+--line 152 of file bib/ctrl.bib
 Warning--string name "december" is undefined
---line 162 of file bib/ctrl.bib
+--line 164 of file bib/ctrl.bib
 Warning--string name "december" is undefined
---line 174 of file bib/ctrl.bib
+--line 176 of file bib/ctrl.bib
 Warning--string name "december" is undefined
---line 186 of file bib/ctrl.bib
+--line 188 of file bib/ctrl.bib
 Warning--string name "december" is undefined
---line 198 of file bib/ctrl.bib
+--line 200 of file bib/ctrl.bib
 Database file #4: bib/readings.bib
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
@@ -23,45 +23,45 @@ Warning--empty year in ctrl:lamb-MCCCS
 Warning--empty booktitle in ctrl:google-arch
 
 Done.
-You've used 27 entries,
+You've used 28 entries,
             4039 wiz_defined-function locations,
-            970 strings with 12257 characters,
-and the built_in function-call counts, 18123 in all, are:
-= -- 1408
-> -- 408
+            975 strings with 12396 characters,
+and the built_in function-call counts, 18507 in all, are:
+= -- 1443
+> -- 412
 < -- 130
-+ -- 218
-- -- 72
-* -- 860
-:= -- 2725
-add.period$ -- 59
-call.type$ -- 27
-change.case$ -- 28
++ -- 220
+- -- 73
+* -- 873
+:= -- 2802
+add.period$ -- 61
+call.type$ -- 28
+change.case$ -- 29
 chr.to.int$ -- 297
-cite$ -- 29
-duplicate$ -- 1368
-empty$ -- 1591
-format.name$ -- 87
-if$ -- 4182
+cite$ -- 30
+duplicate$ -- 1403
+empty$ -- 1623
+format.name$ -- 88
+if$ -- 4262
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 251
-newline$ -- 114
-num.names$ -- 23
-pop$ -- 615
+int.to.str$ -- 28
+missing$ -- 260
+newline$ -- 117
+num.names$ -- 24
+pop$ -- 633
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1386
+skip$ -- 1415
 stack$ -- 0
-substring$ -- 711
-swap$ -- 1063
+substring$ -- 712
+swap$ -- 1088
 text.length$ -- 31
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 27
+type$ -- 28
 warning$ -- 2
-while$ -- 71
-width$ -- 29
-write$ -- 276
+while$ -- 72
+width$ -- 30
+write$ -- 285
 (There were 7 warnings)
