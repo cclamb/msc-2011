@@ -1,5 +1,5 @@
 \section{Cloud System Models}\label{sec:cloud-models}
-Current cloud systems do not ignore SLA restrictions; rather, they are designed from the ground up to support a single type of SLA.  That SLA generally encompasses total system uptime and some kind of response time metric \cite{ctrl:amazon-sla,ctrl:rackspace-sla}.  If for some reason the cloud provider can no longer adhere to the terms outlined, some kind of compensation strategy generally applies to affected customers.  Future cloud providers can very well use the ability to support multiple SLAs as a way to differentiate available products from competitors.
+\noindent Current cloud systems do not ignore SLA restrictions; rather, they are designed from the ground up to support a single type of SLA.  That SLA generally encompasses total system uptime and some kind of response time metric \cite{ctrl:amazon-sla,ctrl:rackspace-sla}.  If for some reason the cloud provider can no longer adhere to the terms outlined, some kind of compensation strategy generally applies to affected customers.  Future cloud providers can very well use the ability to support multiple SLAs as a way to differentiate available products from competitors.
 
 \begin{figure}[!t]
 \centering
@@ -36,7 +36,7 @@ Where $ I $ is an indicator function, $ \forall i \in I, i : () \rightarrow \tau
 
 For example, say we are a customer of Nimbus Cloud Corporation, and we have an SLA in which Nimbus provides guaranteed 100\% uptime and packet latency between 300 and 650 milliseconds.  Nimbus does not have any customer conditions specified within its SLAs.  This then gives us a machine evaluateable SLA:
 \begin{align}
-SLA_{nimbus} = ( ( uptime\_monitor() : bool, \\
+SLA_{nimbus} = ( ( uptime\_monitor() : bool, \notag\\
 \lbrace true \rbrace, \notag \\
 uptime\_evaluator( monitor : () \rightarrow bool, \lbrace true \rbrace) : bool, \notag \\
 uptime\_penalty\_evaluator( T : Z ) : Z ), \notag \\
@@ -47,11 +47,32 @@ latency\_penalty\_evaluator( T : Z ) : Z) ) \notag
 \end{align}
 This more rigorous SLA allows users to monitor obligations and determine penalties when triggered.
 
-\section{Controlling with Service Level Agreements}\label{sec:SLA-analysis}
+\section{Evaluating and Verifying Service Level Agreements}\label{sec:SLA-analysis}
 Now that we have rigorously defined our SLAs, notice that the SLA evaluation functions are predicates, and can be curried for later execution if needed.  This allows us to begin a more fundamental analysis of SLAs and their capabilities.
 
 \subsection{Computational and Space Complexity}
-In Section \ref{sec:SLA-defined}, we defined an SLA to essentially be a sequence of evaluatable predicates.  These evaluatable predicates are related in some way; currently, an SLA is the conjunction of these predicates.  As these predicates can be created prior to evaluation, and at evaluation time require no specific arguments once appropriately curried, we can define these predicates as boolean {\it terms}.  Ergo, once we have created a group of predicates and transformed them into terms, we are evaluating an arbitrary boolean equation - in other words, we are verifying an instance of the Boolean Satisfiability Problem, or $ SAT $.
+In Section \ref{sec:SLA-defined}, we defined an SLA to essentially be a sequence of evaluatable predicates.  These evaluatable predicates are related in some way; currently, an SLA is the conjunction of these predicates.  As these predicates can be created prior to evaluation, and at evaluation time require no specific arguments once appropriately curried, we can define these predicates as boolean {\it terms}.  Ergo, once we have created a group of predicates and transformed them into terms, we are evaluating an arbitrary boolean equation - in other words, we are verifying an instance of the Boolean Satisfiability Problem, or SAT.\\
+
+\noindent {\bf Claim 1:} SLA is in {\bf NP}.\\
+
+\noindent {\bf Proof:} The following verifier runs in polynomial time in the length of an SLA.\\
+
+\begin{tabbing}
+\noindent Veri\=fier\=~$V \langle SLA \rangle$ : \\
+\> \underline{for} each clause $ c \in SLA $ :\\
+\>\> extract monitor $ m \in M $ from $ c $\\
+\>\> extract objective $ o \in O $ from $ c $\\
+\>\> extract evaluator $ e \in E $ from $ c $\\
+\>\> $ r \leftarrow e ( m, o ) $\\
+\>\> \underline{if} $ r = false $ \underline{return} false\\
+\> \underline{return} true\\
+\end{tabbing}
+
+\noindent We can furthermore establish that SLA-SAT is NP-Hard.\\
+
+\noindent {\bf Claim 2:} SAT $ \leq_{p} $ SLA-SAT.\\
+
+\noindent {\bf Proof:} ADD PROOF \\
 
 $ SAT $ is NP-Complete, and provably difficult to solve \cite{comptheory:sipser:intro-comp-theory}.  $ 3SAT $, a subset of $ SAT $, is equally difficult, while $ 2SAT $ is not.  $ 2SAT $ is firmly in the computational class $ P $; in fact, $ 2SAT $ is NL-Complete as well, so we know it is solvable in an amount of space logarithmic in the number of boolean terms \cite{comptheory:papadimitriou:computational-complexity}; it is widely believed that both $ SAT $ and $ 3SAT $ cannot be solved in logarithmic or less space.  Finally, as $ 2SAT $ is NL-Complete, we also know it is contained within NC$^{2}$, and as such is highly parallelizeable \cite{comptheory:papadimitriou:computational-complexity}.
 
