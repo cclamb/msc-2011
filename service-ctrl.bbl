@@ -24,6 +24,16 @@
 \bibitem{ctrl:amazon-cloud-watch}
 ``{A}mazon {C}loudwatch,'' {http://aws.amazon.com/cloudwatch/}, May 2011.
 
+\bibitem{Hilley-2009}
+D.~Hilley, ``Cloud computing: A taxonomy of platform and infrastructure-level
+  offerings,'' Georgia Institute of Technology, Tech. Rep., April 2009.
+
+\bibitem{ctrl:lamb-MCCCS}
+C.~C. Lamb, P.~A. Jamkhedkar, G.~L. Heileman, and C.~T. Abdallah, ``Managed
+  control of composite cloud systems,'' in \emph{6th IEEE International
+  Conference on System of Systems Engineering (SOSE)}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE.
+
 \bibitem{Bu:09}
 \BIBentryALTinterwordspacing
 R.~Buyya, ``Market-oriented cloud computing: Vision, hype, and reality of
@@ -39,6 +49,15 @@ R.~Buyya, C.~S. Yeo, S.~Venugopal, J.~Broberg, and I.~Brandic, ``Cloud
   computing and emerging {IT} platforms: {V}ision, hype, and reality for
   delivering computing as the 5th utility,'' \emph{Future Generation Computer
   Systems}, vol.~25, no.~6, pp. 599--616, 2009.
+
+\bibitem{Jamkhedkar:2010:IUM:1866870.1866885}
+\BIBentryALTinterwordspacing
+P.~A. Jamkhedkar, G.~L. Heileman, and C.~C. Lamb, ``An interoperable usage
+  management framework,'' in \emph{Proceedings of the tenth annual ACM workshop
+  on Digital rights management}, ser. DRM '10.\hskip 1em plus 0.5em minus
+  0.4em\relax New York, NY, USA: ACM, 2010, pp. 73--88. [Online]. Available:
+  \url{http://doi.acm.org/10.1145/1866870.1866885}
+\BIBentrySTDinterwordspacing
 
 \bibitem{ctrl:ariba-GL:2009}
 Y.~Ariba, F.~Gouaisbaut, and Y.~Labit, ``Feedback control for router management
@@ -80,8 +99,8 @@ J.~Hellerstein, S.~Singhal, and Q.~Wang, ``Research challenges in control
 ``{A}mazon {EC2} {SLA},'' {http://aws.amazon.com/ec2-sla/}, May 2011.
 
 \bibitem{ctrl:rackspace-sla}
-``{R}ackspace {C}loud {L}egal - {SLA},''
-  {http://www.rackspace.com/cloud/legal/sla/}, May 2011.
+``{R}ackspace {C}loud - {SLA},'' {http://www.rackspace.com/cloud/legal/sla/},
+  May 2011.
 
 \bibitem{ctrl:google-arch}
 J.~Dean, ``{D}esigns, {L}essons and {A}dvice from {B}uilding {L}arge
@@ -113,10 +132,45 @@ M.~Sipser, \emph{Introduction to the Theory of Computation}, 1st~ed.\hskip 1em
 C.~M. Papadimitriou, \emph{{Computational complexity}}.\hskip 1em plus 0.5em
   minus 0.4em\relax Reading, Massachusetts: Addison-Wesley, 1994.
 
-\bibitem{ctrl:chen-ghwbhs:2010}
-Y.~Chen, D.~Gmach, C.~Hyser, Z.~Wang, C.~Bash, C.~Hoover, and S.~Singhal,
-  ``Integrated management of application performance, power and cooling in data
-  centers,'' in \emph{Network Operations and Management Symposium (NOMS), 2010
-  IEEE}, 2010, pp. 615 --622.
+\bibitem{Hochbaum:1996:AAN:241938}
+D.~S. Hochbaum, Ed., \emph{Approximation algorithms for NP-hard
+  problems}.\hskip 1em plus 0.5em minus 0.4em\relax Boston, MA, USA: PWS
+  Publishing Co., 1997.
+
+\bibitem{ctrl:satcompetition}
+``Sat competitions,'' {http://www.satcompetition.org/}, May 2011.
+
+\bibitem{Malrait-2010}
+L.~Malrait, ``Qos-oriented control of server systems,'' \emph{ACM SIGOPS
+  Operating Systems Review}, vol.~44, no.~3, pp. 59--64, July 2010.
+
+\bibitem{Padala-2009}
+P.~Padala, K.-Y. Hou, K.~G. Shin, X.~Zhu, M.~Uysal, Z.~Wang, S.~Singhal, and
+  A.~Merchant, ``Automated control of multiple virtualized resources,'' in
+  \emph{Proceedings of the 4th ACM European conference on Computer
+  systems}.\hskip 1em plus 0.5em minus 0.4em\relax Nuremberg, Germany: ACM,
+  March 2009, pp. 13--26.
+
+\bibitem{Nathuji-2010}
+R.~Nathuji, A.~Kansal, and A.~Ghaffarkhah, ``Q-clouds: Managing performance
+  interference effects for qos-aware clouds,'' in \emph{Proceedings of the ACM
+  European Society in Systems Conference 2010}, Paris, France, April 2010, pp.
+  237--250.
+
+\bibitem{Abdelzaher-SIGMETRICS-2008}
+T.~Abdelzaher, Y.~Diao, J.~L. Hellerstein, C.~Lu, and X.~Zhu, ``Introduction to
+  control theory and its application to computing systems,'' in
+  \emph{SIGMETRICS Tutorial}, Annapolis, MD, June 2008, pp. 185 -- 215.
+
+\bibitem{Fu-FeBID-2009}
+Y.~Fu, C.~Lu, and H.~Wang, ``Control-theoretic thermal balancing for
+  clusters,'' in \emph{International Workshop on Feedback Control
+  Implementation and Design in Computing Systems and Networks (FeBID'09)},
+  April 2009, invited paper.
+
+\bibitem{Wang-2010}
+Z.~Wang, N.~Tolia, and C.~Bash, ``Opportunities and challenges to unify
+  workload, power and cooling management in data centers,'' \emph{ACM SIGOPS
+  Operating Systems Review}, vol.~44, no.~3, pp. 41--46, July 2010.
 
 \end{thebibliography}

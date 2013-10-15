@@ -1,0 +1,50 @@
+\documentclass[a4paper,twoside]{article}
+
+%\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{calc}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{pslatex}
+\usepackage{apalike}
+\usepackage{SCITEPRESS}
+\usepackage[small]{caption}
+\usepackage{listings}
+
+\subfigtopskip=0pt
+\subfigcapskip=0pt
+\subfigbottomskip=0pt
+
+\graphicspath{{./images/}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png,.jpg}
+
+\begin{document}
+
+\title{
+Service Level Agreement Computational Complexity  
+\subtitle{Processing Concerns for Aggregate SLAs}
+}
+
+\author{\authorname{Christopher C. Lamb\sup{1} and Gregory L. Heileman\sup{1}}
+\affiliation{\sup{1}Department of Electrical and Computer Engineering, The University of New Mexico, Albuquerque, NM 87131}
+\email{\{cclamb, heileman\}@ece.unm.edu}
+}
+
+\keywords{Computational Complexity ; Service Level Agreements ; Cloud Computing}
+
+\abstract{
+\input{content/abstract}
+}
+
+\onecolumn \maketitle \normalsize \vfill
+
+\input{content/introduction}
+\input{content/analysis}
+\input{content/conclusion}
+\input{content/references}
+
+\end{document}
