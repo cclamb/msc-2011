@@ -28,10 +28,14 @@ While industry does seem to certainly be trending in this direction, as indicate
 \section{Service Level Agreements Defined}\label{sec:SLA-defined}
 As we have seen, SLAs generally consist of a set of conditions of use under which the SLA is binding, a set of obligations that the provider will adhere to if the customer adheres to the set conditions, and two sets of penalties, one penalizing the provider when breaching obligations, and another penalizing the customer when breaching conditions of use.  Conditions are generally loosely defined, while provider obligations are much more rigorously constructed.  Generally however, conditions and obligations in this context can be viewed as defined by {\it objectives} which are measured by {\it indicators}.  In the case of provider-centric obligations, these are commonly defined as service level indicators (SLIs) and objectives (SLOs).
 
-With this general understanding of SLAs and related SLIs and SLOs, we can create a non-specific definition of an SLA as a set of tuples:
-\begin{equation}
-SLA = \lbrace (I,O,E,P)_{0..n} \rbrace, n \in Z \\
-\end{equation}
+With this general understanding of SLAs and related SLIs and SLOs, we can create a non-specific definition of an SLA as a list of tuples related via boolean operators including $($, $)$, $\lor$, $\land$, and $\lnot$.  Each tuple is a clause in the SLA:
+
+\begin{eqnarray}
+CLAUSE = \lbrace (I,O,E,P) \rbrace, \\
+OPERATOR = \lbrace ( , ) , \lor, \land, \lnot \rbrace \\
+SLA = \lbrace ( o_{0}, c_{0}, o_{1}, c_{1}, ..., c_{n}, o_{n + 1} ) \rbrace , \\ c \in CLAUSE, o \in OPERATOR \notag
+\end{eqnarray}
+
 Where $ I $ is an indicator function, $ \forall i \in I, i : () \rightarrow \tau $, which retrieve indicator values, generally related to some kind of SLI or customer condition indicator.  Parameter $ O $ is a set of values derived from SLOs or customer condition objectives such that $ \forall o \in O, o : P(\tau) $.  Parameter $ E $ is a set of predicates that indicate whether a specific indicator complies with its objectives, where $ \forall e \in E, e : ( () \rightarrow \tau ) \times P(\tau) \rightarrow bool $.  Parameter $ P $ is a set of penalty functions, $ \forall p \in P, p : Z \rightarrow Z $, where the first argument is generally an elapsed time value.
 
 For example, say we are a customer of Nimbus Cloud Corporation, and we have an SLA in which Nimbus provides guaranteed 100\% uptime and packet latency between 300 and 650 milliseconds.  Nimbus does not have any customer conditions specified within its SLAs.  This then gives us a machine evaluateable SLA:
@@ -40,12 +44,15 @@ SLA_{nimbus} = ( ( uptime\_monitor() : bool, \notag\\
 \lbrace true \rbrace, \notag \\
 uptime\_evaluator( monitor : () \rightarrow bool, \lbrace true \rbrace) : bool, \notag \\
 uptime\_penalty\_evaluator( T : Z ) : Z ), \notag \\
+\land, \notag \\
 ( latency\_monitor() : Z, \notag \\
 \lbrace 300, 650 \rbrace, \notag \\
 latency\_evaluator( monitor : () \rightarrow Z, \lbrace 300, 650 \rbrace) : bool, \notag \\
 latency\_penalty\_evaluator( T : Z ) : Z) ) \notag
 \end{align}
-This more rigorous SLA allows users to monitor obligations and determine penalties when triggered.
+This more rigorous SLA allows users to monitor obligations and determine penalties when triggered.  Furthermore, when structuring SLAs in this way, we are able to combine any single SLA with other SLAs but extracting the clauses and creating a new aggregate SLA, which is just the conjunction of the combined SLAs, such that for $ A, B, C \in SLA $, $ ( A \land B \land C ) \in SLA $.  We will further define SLA-SAT as the problem of establishing whether a given SLA or group of SLAs have a solution.
+
+Also note that evaluators, as they compare the output of a monitor to an input value, can run in constant time.  Monitors, as they retrieve specific contextual values from a running system, execute over some assumed constant time not influenced by the SLA.
 
 \section{Evaluating and Verifying Service Level Agreements}\label{sec:SLA-analysis}
 Now that we have rigorously defined our SLAs, notice that the SLA evaluation functions are predicates, and can be curried for later execution if needed.  This allows us to begin a more fundamental analysis of SLAs and their capabilities.
@@ -53,28 +60,44 @@ Now that we have rigorously defined our SLAs, notice that the SLA evaluation fun
 \subsection{Computational and Space Complexity}
 In Section \ref{sec:SLA-defined}, we defined an SLA to essentially be a sequence of evaluatable predicates.  These evaluatable predicates are related in some way; currently, an SLA is the conjunction of these predicates.  As these predicates can be created prior to evaluation, and at evaluation time require no specific arguments once appropriately curried, we can define these predicates as boolean {\it terms}.  Ergo, once we have created a group of predicates and transformed them into terms, we are evaluating an arbitrary boolean equation - in other words, we are verifying an instance of the Boolean Satisfiability Problem, or SAT.\\
 
-\noindent {\bf Claim 1:} SLA is in {\bf NP}.\\
+\noindent {\bf Claim 1:} SLA-SAT is in {\bf NP}.\\
 
-\noindent {\bf Proof:} The following verifier runs in polynomial time in the length of an SLA.\\
+\noindent {\bf Proof:} The following verifier runs in polynomial time in the length of an SLA-SAT.\\
 
+\noindent {\sl Input}: $ \sigma \in SLA$, a verifier $v_{SAT}$ for SAT \\
+\noindent {\sl Output}: TRUE if the SLA is satisfied FALSE otherwise.
 \begin{tabbing}
-\noindent Veri\=fier\=~$V \langle SLA \rangle$ : \\
-\> \underline{for} each clause $ c \in SLA $ :\\
-\>\> extract monitor $ m \in M $ from $ c $\\
-\>\> extract objective $ o \in O $ from $ c $\\
-\>\> extract evaluator $ e \in E $ from $ c $\\
-\>\> $ r \leftarrow e ( m, o ) $\\
-\>\> \underline{if} $ r = false $ \underline{return} false\\
-\> \underline{return} true\\
+~~~~\=~~~~\=~~~~\=~~~~\= \\
+\noindent Verifier $V_{SLA-SAT} \langle \sigma, v_{SAT}  \rangle$ : \\
+\> $ l \leftarrow $ list \\
+\> \underline{for} each element $ e \in SLA $ :\\
+\>\> \underline{if} e is a clause : \\
+\>\>\> extract monitor $ m \in M $ from $ c $\\
+\>\>\> extract objective $ o \in O $ from $ c $\\
+\>\>\> extract evaluator $ v \in E $ from $ c $\\
+\>\>\> $ r \leftarrow v ( m, o ) $\\
+\>\>\> add $ r $ to $ l $ \\
+\>\> \underline{else} : \\
+\>\>\> add $ e $ to $ l $ \\
+\>\> \underline{endif} \\
+%\>\> \underline{if} $ r = false $ \underline{return} false\\
+\> \underline{endfor} \\
+\> \underline{return} $ v_{SAT}(l) $ \\
 \end{tabbing}
 
-\noindent We can furthermore establish that SLA-SAT is NP-Hard.\\
+\noindent We can furthermore establish that SLA-SAT is NP-Hard, establishing NP-Completeness.\\
 
 \noindent {\bf Claim 2:} SAT $ \leq_{p} $ SLA-SAT.\\
 
-\noindent {\bf Proof:} ADD PROOF \\
+\noindent {\bf Proof:} Define a function $ f : ( \beta ) \rightarrow \sigma $, where $ \beta $ is a generalized boolean formula consisting of boolean clauses related by the logical operators $($, $)$, $\land$, $\lor$, and $\lnot$ and $ \sigma \in $ SLA-SAT. $ f $ will parse through $ \beta $, skipping operators, and transforming boolean elements $ \zeta $ into tuples $ t \in CLAUSE $ such that $ t = ( null, null, f : ( () \rightarrow \tau \times P(\tau) \rightarrow bool ) \rightarrow \zeta, null ) $.  $ f $ then adds the operator or transfurmed boolean element to a list.  When $ f $ reaches the end of the boolean formula, it returns the list. \\
 
-$ SAT $ is NP-Complete, and provably difficult to solve \cite{comptheory:sipser:intro-comp-theory}.  $ 3SAT $, a subset of $ SAT $, is equally difficult, while $ 2SAT $ is not.  $ 2SAT $ is firmly in the computational class $ P $; in fact, $ 2SAT $ is NL-Complete as well, so we know it is solvable in an amount of space logarithmic in the number of boolean terms \cite{comptheory:papadimitriou:computational-complexity}; it is widely believed that both $ SAT $ and $ 3SAT $ cannot be solved in logarithmic or less space.  Finally, as $ 2SAT $ is NL-Complete, we also know it is contained within NC$^{2}$, and as such is highly parallelizeable \cite{comptheory:papadimitriou:computational-complexity}.
+\noindent We can also show the inverse.\\
+
+\noindent {\bf Claim 3:} SLA-SAT $ \leq_{p} $ SAT.\\
+
+\noindent {\bf Proof:} Define a function $ g : ( \sigma ) \rightarrow \beta $, where $ \beta $ is a generalized boolean formula consisting of boolean clauses related by the logical operators $($, $)$, $\land$, $\lor$, and $\lnot$ and $ \sigma \in $ SLA-SAT.  Evaluate each element within $\sigma$, copying each operation into a boolean expression $\beta$, and transforming each clause by evaluating $e \in E$ with contained indicators and objectives $i \in I$ and $o \in O$.  Copy the resulting boolean value into the expression $\beta$.  When finished traversing $\sigma$, return $\beta$. \\
+
+Therefore, as SAT is NP-Complete, and provably difficult to solve, SLA-SAT is NP-Complete as well \cite{comptheory:sipser:intro-comp-theory}.  However, 3SAT, a subset of SAT, is equally difficult, while 2SAT is not.  2SAT is firmly in the computational class P; in fact, 2SAT is NL-Complete as well, so we know it is solvable in an amount of space logarithmic in the number of boolean terms \cite{comptheory:papadimitriou:computational-complexity}; it is widely believed that both SAT and 3SAT cannot be solved in logarithmic or less space.  Finally, as 2SAT is NL-Complete, we also know it is contained within NC$^{2}$, and as such is highly parallelizeable \cite{comptheory:papadimitriou:computational-complexity}.  This implies that SLAs should be implemented or aggregated in a form no more complex than 2SAT to facilitate efficient processing.
 
 \subsection{Verification v. Solution}
 General SLA use focuses on verification rather than solution.  That is to say, with respect to a given SLA, both the user and provider is more concerned with whether the system is currently compliant with all SLA terms.  In future use, this may very well no longer be the case.  For example, imagine a cloud system from the user's perspective that spans multiple cloud providers; a single general purpose provider for general computing, data storage, and queuing, a specific-use provider for an unique set of algorithms of some kind (say, market modeling algorithms), and finally a Content Delivery Network (CDN) provider.  Each of these providers have a unique SLA with multiple conditions.  In this particular case, the user may need to know if the given system can work together at all under the terms of the SLAs, and if so, under what conditions.  As the user has combined all the SLAs composing the system and is attempting to find some combination of terms that satisfies the resulting boolean formula, the user is in essence attempting to find a solution for this instance of $ SAT $, a known NP-Complete problem.  Likewise, a cloud provider may need to solve similar problems where the SLAs at issue are the whole of SLAs issued to the entire provider's customer base.
